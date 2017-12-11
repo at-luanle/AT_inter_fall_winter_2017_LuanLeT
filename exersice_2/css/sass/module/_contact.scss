@@ -1,0 +1,56 @@
+.section_contact {
+  height: 450px;
+  max-width: 100%;
+  background-color: map-get($color, white);
+  .section_contact_top {
+    height: 90px;
+    width: 100%;
+    background-color: map-get($color, primary);
+    .section_contact_top h2{
+      padding-top: 30px;
+      text-align: center;
+      color: map-get($color, white);
+    }
+  }
+  .section_contact_bottom {
+    padding-top: 48px;
+    .section_contact_bottom_left {
+      width: 700px;
+      height: auto;
+      float: left;
+      .section_contact_bottom_left p {
+        padding-bottom: 25px;
+        font-style: italic;
+      }
+      .section_contact_bottom_left input, textarea {
+        width: 100%;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid map-get($color, four);
+        margin-bottom: 22px;
+        color: map-get($color, four);
+      }
+    }
+    .section_contact_bottom_right {
+      padding-top: 43px;
+      width: 500px;
+      height: auto;
+      margin-left: 40px;
+      float: left;
+      .section_contact_bottom_right h2 {
+        text-transform: uppercase;
+        font-size: 14px;
+      }
+      .section_contact_bottom_right h2,p {
+        padding-bottom: 5px;
+      }
+      .section_contact_bottom_right_p {
+        font-style: italic;
+        color: map-get($color, four);
+      }
+      .section_contact_bottom_right img {
+        padding-right: 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.section_new_event {
+  margin-top: 30px;
+  max-width: 1600px;
+  height: 641px;
+  background: url('../img/new_event.jpg') no-repeat;
+  .section_new_event .top {
+  margin-top: -30px;
+  color: map-get($color, white);
+  }
+  .section_new_event_article {
+    color: map-get($color, white);
+    padding-top: 10px;
+    .section_new_event_article_item {
+      width: 400px;
+      height: auto;
+      float: left;
+      padding-right: 15px;
+    }
+    .section_new_event_article_item_l {
+      padding-right: 0px;
+    }
+    .section_new_event_article_item img
+    {
+      padding-bottom: 23px;
+      width: 399px;
+      height: 210px;
+    }
+    .section_new_event_article_item p {
+      padding-bottom: 23px;
+    }
+  }
+}

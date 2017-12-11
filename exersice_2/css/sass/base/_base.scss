@@ -1,0 +1,41 @@
+body {
+  width: 1600px;
+  height: auto;
+  font-family: $font-content;
+  font-size: $primary-font;
+  background-color: map-get($color, white);
+  margin: 0px auto;
+}
+
+.container {
+  width: 1240px;
+  height: 100%;
+  margin: 0px auto;
+}
+
+h2 {
+  font-size: 32px;
+}
+h3 {
+  font-size: 20px;
+}
+h4 {
+  font-weight: bold;
+}
+a {
+  color: map-get($color, secondary);
+}
+.color_h4 {
+  color: map-get($color, primary);
+}
+.top {
+  padding-top: 50px;
+  text-align: center;
+}
+.top h2 {
+  padding-bottom: 30px;
+}
+.section_item {
+  float: left;
+  padding-left: 35px;
+}

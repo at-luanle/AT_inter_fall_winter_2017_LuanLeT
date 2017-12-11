@@ -1,0 +1,26 @@
+.section_project {
+  clear: both;
+  height: 942px;
+  width: 100%;
+  .section_project_nav {
+    padding-top: 50px;
+    margin-left: 37%;
+  }
+  .section_project_bottom {
+      padding-top: 40px;
+      width: 100%;
+      height: 100%;
+      clear: both;
+    .section_project_bottom_item {
+      padding-right: 5px;
+      width: 295px;
+      float: left;
+    }
+    .section_project_bottom_img {
+      padding-bottom: 8px;
+    }
+    .section_project_bottom_item_l {
+      padding-right: 0px;
+    }
+  }
+}
