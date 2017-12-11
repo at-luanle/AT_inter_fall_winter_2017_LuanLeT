@@ -1,0 +1,24 @@
+@font-face {
+  font-family: UTM Avo;
+  src: url('../fonts/UTM Avo.ttf');
+}
+
+$color: (
+  primary : #0b9444,
+  secondary : #282828,
+  third : #f7f7f7,
+  four : #d7d7d7,
+  five : #36623c,
+  danger : #ff3b30,
+  info : #5ac8fa,
+  disable : #d9d9d9,
+  black : #000,
+  white : #fff,
+  gray : #f2f3f9,
+  green : #4cd964,
+  pink : #ff2d55,
+  red : #ff0000,
+);
+
+$font-content : 'UTM Avo',  sans-serif;
+$primary-font : 14px;
