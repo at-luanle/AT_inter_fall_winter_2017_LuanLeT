@@ -1,0 +1,25 @@
+.section_about {
+  height: 672px;
+  width: 100%;
+  background-color: map-get($color, third);
+  .acticle_about {
+    width: 1240px;
+    margin-top: 70px;
+    float: left;
+    .acticle_about_item {
+      padding-right: 20px;
+      float: left;
+      width: 400px;
+      .acticle_about_item_h4 {
+        padding-bottom: 25px;
+        text-transform: uppercase;
+      }
+    }
+    .acticle_about_item_last {
+      padding-right:0px;
+    }
+    .acticle_about_item_img {
+      padding-top: 25px;
+    }
+  }
+}
