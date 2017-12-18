@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" id="js-btn-cart" type="button">Cart</button>
+        </form>
+    </div>
+  </nav>
+  <main role="main">
+    <div class="jumbotron">
+    </div>
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+          <div class="col-md-4">
+            <h2> Sản phẩm 1</h2>
+            <p>200</p>
+            <p><button class="btn btn-secondary js-btn-buy" data-name="Product 1" data-price="200" data-amount="0">Buy</button></p>
+          </div>
+          <div class="col-md-4">
+            <h2>Sản Phẩm 2</h2>
+            <p>300</p>
+            <p><button class="btn btn-secondary js-btn-buy" data-name="Product 2" data-price="300" data-amount="0">Buy</button></p>
+          </div>
+          <div class="col-md-4">
+            <h2>Sản Phẩm 3</h2>
+            <p>100</p>
+            <p><button class="btn btn-secondary js-btn-buy" data-name="Product 3" data-price="100" data-amount="0">Buy</button></p>
+          </div>
+      </div>
+      <hr>
+    </div>
+    <!-- /container -->
+    <div class="container">
+      <div class="row" id="js-show-cart">
+      </div>
+    </div>
+  </main>
+  <footer class="container">
+  </footer>
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>
+    window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')
+  </script>
+  <script src="../../../../assets/js/vendor/popper.min.js"></script>
+  <script src="../../../../dist/js/bootstrap.min.js"></script>
+  <!-- JavaScript -->
+  <script>
+    $btn = document.getElementsByClassName('js-btn-buy');
+    for (let $i of $btn) {
+      $i.addEventListener('click', function() {
+        $name = this.getAttribute('data-name');
+        $price = this.getAttribute('data-price');
+        $amount = increate($i);
+      });
+      function increate($i){
+        $i.setAttribute('data-amount',Number($i.getAttribute('data-amount'))+1);
+      }
+    }
+    document.getElementById('js-btn-cart').addEventListener('click', showCart);
+    function showCart() {
+      var listCart = '<table class="table"><thead><tr><th scope="col">Name</th><th scope="col">Price</th><th scope="col">Amount</th><th scope="col">Total</th></tr></thead><tbody>';
+      for (let $i of $btn) {
+        var name, price, amount, total, sum = 0;
+        if ($i.getAttribute('data-amount')>0){
+          name      = '<td>' + $i.getAttribute('data-name') + '</td>';
+          price     = '<td>' + $i.getAttribute('data-price') + '</td>';
+          amount    = '<td>' + $i.getAttribute('data-amount') + '</td>';
+          total     = '<td>' + $i.getAttribute('data-price') * $i.getAttribute('data-amount') + '</td>';
+          listCart += '<tr>' + name + price + amount + total + '</tr>';
+          sum      += $i.getAttribute('data-price') * $i.getAttribute('data-amount');
+        }
+      }
+      listCart += '<tr><td></td><td></td><td><strong>Money</strong></td><td>' + sum + '</td></tr></tbody></table>';
+      document.getElementById('js-show-cart').innerHTML = listCart;
+    }
+  </script>
+</body>
+</html>
